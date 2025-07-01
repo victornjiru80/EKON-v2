@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
 
 
 const Hero: React.FC = () => {
@@ -34,7 +33,6 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen sm:h-[100svh] overflow-hidden">
-      <Navbar />
       
       {slides.map((slide, index) => (
         <div

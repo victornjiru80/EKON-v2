@@ -5,6 +5,7 @@ import Stats from '@/components/Stats';
 import Process from '@/components/Process';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
+import Navbar from '@/components/Navbar';
 
 const sectionVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -24,6 +25,7 @@ const Index: React.FC = () => {
   return (
     <div className="min-h-screen">
       <main className="pt-16">
+        <Navbar />
         <Hero />
         <motion.section
           variants={sectionVariant}
