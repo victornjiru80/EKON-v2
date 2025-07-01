@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 
 const Hero: React.FC = () => {
@@ -8,17 +9,17 @@ const Hero: React.FC = () => {
   
   const slides = [
     {
-      image: '/backgroud image.png',
-      title: 'Building Excellence Since 1971',
+      image: '/bg1.png',
+      title: 'Building Excellence Since 2011',
       subtitle: 'Professional Construction Services'
     },
     {
-      image: '/backgroud image.png',
+      image: '/bg2.png',
       title: 'Quality Construction',
       subtitle: 'Trusted by Communities'
     },
     {
-      image: 'https://d64gsuwffb70l.cloudfront.net/6851251359aa97b9f0f5fcb1_1750782234922_e00bfd61.png',
+      image: '/bg3.png',
       title: 'Modern Infrastructure',
       subtitle: 'Building Tomorrow Today'
     }
@@ -33,6 +34,7 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen overflow-hidden">
+      <Navbar />
       
       {slides.map((slide, index) => (
         <div

@@ -1,5 +1,35 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
+import { motion } from 'framer-motion';
+
+const containerVariant = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.5,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const cardVariant = {
+  hidden: { opacity: 0, y: 40, scale: 0.96 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: { type: "spring" as "spring", stiffness: 70, damping: 15 }
+  },
+};
+
+const headingVariant = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { duration: 0.7, type: "spring" as const, stiffness: 60 } 
+  }
+};
 
 const Projects: React.FC = () => {
   const projects = [
@@ -38,18 +68,42 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Projects</h2>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={headingVariant}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl font-bold text-muted-foreground text-gray-900 mb-4">Our Projects</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore our portfolio of successful construction projects across various sectors.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={containerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {projects.map((project, index) => (
-            <ProjectCard key={index} {...project} />
+            <motion.div
+              key={index}
+              variants={cardVariant}
+              whileHover={{
+                scale: 1.035,
+                boxShadow: "0 8px 32px 0 rgba(249,115,22,0.15)",
+                transition: { type: "spring", stiffness: 300, damping: 18 }
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300"
+            >
+              <ProjectCard {...project} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

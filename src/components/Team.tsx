@@ -5,25 +5,25 @@ import { Linkedin, Mail } from 'lucide-react';
 const Team: React.FC = () => {
   const teamMembers = [
     {
-      name: "David Wilson",
+      name: "Eric Kagiri",
       role: "CEO & Founder",
       image: "/placeholder.svg",
       description: "20+ years in construction industry with expertise in project management."
     },
     {
-      name: "Emily Davis",
+      name: "Victor Mwangi",
       role: "Lead Architect",
       image: "/placeholder.svg",
       description: "Award-winning architect specializing in sustainable building design."
     },
     {
-      name: "Robert Martinez",
+      name: "Ephraim Muriuki",
       role: "Construction Manager",
       image: "/placeholder.svg",
       description: "Expert in large-scale construction projects and team coordination."
     },
     {
-      name: "Lisa Anderson",
+      name: "Murai Wambua",
       role: "Project Coordinator",
       image: "/placeholder.svg",
       description: "Ensures seamless project execution and client communication."

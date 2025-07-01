@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
             <h3 className="text-2xl font-bold text-orange-600 mb-4">EKON</h3>
             <p className="text-gray-300 mb-4">Construction Company</p>
             <p className="text-gray-400 text-sm">
-              Building Kenya's future with excellence, integrity, and innovation since 1971.
+              Building Kenya's future with excellence, integrity, and innovation since 2011.
             </p>
           </div>
           

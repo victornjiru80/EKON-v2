@@ -17,11 +17,11 @@ const Navbar: React.FC = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link to="/" className="text-gray-900 hover:text-orange-600 px-3 py-2 text-sm font-medium">HOME</Link>
-              <Link to="/about" className="text-gray-900 hover:text-orange-600 px-3 py-2 text-sm font-medium">ABOUT</Link>
-              <Link to="/projects" className="text-gray-900 hover:text-orange-600 px-3 py-2 text-sm font-medium">PROJECTS</Link>
-              <Link to="/services" className="text-gray-900 hover:text-orange-600 px-3 py-2 text-sm font-medium">SERVICES</Link>
-              <Link to="/contact" className="text-gray-900 hover:text-orange-600 px-3 py-2 text-sm font-medium">CONTACT</Link>
+              <Link to="/" className="text-gray-600  hover:text-orange-600 px-3 py-2 text-sm font-medium">HOME</Link>
+              <Link to="/about" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium">ABOUT</Link>
+              <Link to="/projects" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium">PROJECTS</Link>
+              <Link to="/services" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium">SERVICES</Link>
+              <Link to="/contact" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium">CONTACT</Link>
             </div>
           </div>
           <div className="md:hidden">

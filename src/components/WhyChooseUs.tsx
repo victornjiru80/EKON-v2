@@ -5,22 +5,22 @@ import { CheckCircle, Award, Users, Clock } from 'lucide-react';
 const WhyChooseUs: React.FC = () => {
   const reasons = [
     {
-      icon: <CheckCircle className="h-8 w-8 text-blue-600" />,
+      icon: <CheckCircle className="h-8 w-8 text-blue-400" />,
       title: "Quality Assurance",
       description: "We ensure the highest quality standards in every project we undertake."
     },
     {
-      icon: <Award className="h-8 w-8 text-blue-600" />,
+      icon: <Award className="h-8 w-8 text-blue-400" />,
       title: "Expert Team",
       description: "Our certified professionals bring years of experience to your project."
     },
     {
-      icon: <Users className="h-8 w-8 text-blue-600" />,
+      icon: <Users className="h-8 w-8 text-blue-400" />,
       title: "Customer Focus",
       description: "We prioritize client satisfaction and maintain clear communication."
     },
     {
-      icon: <Clock className="h-8 w-8 text-blue-600" />,
+      icon: <Clock className="h-8 w-8 text-blue-400" />,
       title: "Timely Delivery",
       description: "We complete projects on time without compromising on quality."
     }
@@ -30,7 +30,7 @@ const WhyChooseUs: React.FC = () => {
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-muted-foreground text-gray-900 mb-4">
             Why Choose EKON Construction?
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
