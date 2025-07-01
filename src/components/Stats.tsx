@@ -5,7 +5,7 @@ const Stats: React.FC = () => {
   const stats = [
     {
       icon: <Building className="h-8 w-8 text-white" />,
-      number: "500+",
+      number: "50+",
       label: "Projects Completed"
     },
     {

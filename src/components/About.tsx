@@ -68,7 +68,7 @@ const About: React.FC = () => {
             </p>
             
             <div className="grid grid-cols-2 gap-6">
-              {[{num: '50+', label: 'Projects Completed'}, {num: '25+', label: 'Years Experience'}].map((stat, i) => (
+              {[{num: '50+', label: 'Projects Completed'}, {num: '15+', label: 'Years Experience'}].map((stat, i) => (
                 <motion.div
                   key={stat.label}
                   custom={i}

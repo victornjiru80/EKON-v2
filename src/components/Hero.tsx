@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
   }, [slides.length]);
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-screen sm:h-[100svh] overflow-hidden">
       <Navbar />
       
       {slides.map((slide, index) => (
