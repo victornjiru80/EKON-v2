@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Navbar: React.FC = () => {
@@ -17,11 +17,11 @@ const Navbar: React.FC = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link to="/" className="text-gray-600  hover:text-orange-600 px-3 py-2 text-sm font-medium">HOME</Link>
-              <Link to="/about" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium">ABOUT</Link>
-              <Link to="/projects" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium">PROJECTS</Link>
-              <Link to="/services" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium">SERVICES</Link>
-              <Link to="/contact" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium">CONTACT</Link>
+              <NavLink to="/" className="text-gray-600  hover:text-orange-600 px-3 py-2 text-sm font-medium"><p>HOME</p></NavLink>
+              <NavLink to="/about" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium"><p>ABOUT </p></NavLink>
+              <NavLink to="/projects" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium"><p>PROJECTS </p></NavLink>
+              <NavLink to="/services" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium"><p>SERVICES </p></NavLink>
+              <NavLink to="/contact" className="text-gray-600 hover:text-orange-600 px-3 py-2 text-sm font-medium"><p>CONTACT </p></NavLink>
             </div>
           </div>
           <div className="md:hidden">

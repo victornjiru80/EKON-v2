@@ -130,3 +130,7 @@
 .markdown-preview ol {
   @apply my-4 ml-6;
 }
+
+a.active p{
+  color: orange;
+}
