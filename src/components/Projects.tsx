@@ -34,18 +34,18 @@ const headingVariant = {
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: 'Reale Hospital',
+      title: 'Niam Hospital',
       description: 'Modern healthcare facility with state-of-the-art equipment and patient-centered design.',
       image: 'https://d64gsuwffb70l.cloudfront.net/6851251359aa97b9f0f5fcb1_1750782234922_e00bfd61.png',
       images: [
         'https://d64gsuwffb70l.cloudfront.net/6851251359aa97b9f0f5fcb1_1750782234922_e00bfd61.png',
         'https://d64gsuwffb70l.cloudfront.net/6851251359aa97b9f0f5fcb1_1750782234922_e00bfd61.png'
       ],
-      fullDescription: 'The Reale Hospital project represents our commitment to healthcare infrastructure. This multi-story facility features advanced medical equipment, patient rooms, surgical suites, and administrative offices. Built with sustainable materials and energy-efficient systems.'
+      fullDescription: 'The Niam Hospital project represents our commitment to healthcare infrastructure. This multi-story facility features advanced medical equipment, patient rooms, surgical suites, and administrative offices. Built with sustainable materials and energy-efficient systems.'
     },
     {
       title: 'Commercial Complex',
-      description: 'Multi-purpose commercial building with retail and office spaces.',
+      description: 'Multi-purpose commercial building with 2000 sqm retail and office spaces.',
       image: 'https://d64gsuwffb70l.cloudfront.net/6851251359aa97b9f0f5fcb1_1750782234922_e00bfd61.png',
       images: [
         'https://d64gsuwffb70l.cloudfront.net/6851251359aa97b9f0f5fcb1_1750782234922_e00bfd61.png',
@@ -75,8 +75,8 @@ const Projects: React.FC = () => {
           variants={headingVariant}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-muted-foreground text-gray-900 mb-4">Our Projects</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-bold text-muted-foreground mb-4">Our Projects</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Explore our portfolio of successful construction projects across various sectors.
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ const Projects: React.FC = () => {
                 transition: { type: "spring", stiffness: 300, damping: 18 }
               }}
               whileTap={{ scale: 0.98 }}
-              className="rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300"
+              className="rounded-xl bg-white/80 backdrop-blur-sm shadow-md hover:shadow-xl transition-all duration-300 border-0"
             >
               <ProjectCard {...project} />
             </motion.div>

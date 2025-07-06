@@ -60,13 +60,31 @@ const Contact: React.FC = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
-                  <Input placeholder="First Name" />
-                  <Input placeholder="Last Name" />
+                  <Input 
+                    placeholder="First Name" 
+                    className="!focus-visible:ring-0 !focus-visible:ring-offset-0 !border-gray-300 focus:!border-primary"
+                  />
+                  <Input 
+                    placeholder="Last Name" 
+                    className="!focus-visible:ring-0 !focus-visible:ring-offset-0 !border-gray-300 focus:!border-primary"
+                  />
                 </div>
-                <Input placeholder="Email Address" type="email" />
-                <Input placeholder="Phone Number" type="tel" />
-                <Textarea placeholder="Tell us about your project..." rows={5} />
-                <Button className="w-full bg-orange-400 hover:bg-orange-700">
+                <Input 
+                  placeholder="Email Address" 
+                  type="email" 
+                  className="!focus-visible:ring-0 !focus-visible:ring-offset-0 !border-gray-300 focus:!border-primary"
+                />
+                <Input 
+                  placeholder="Phone Number" 
+                  type="tel" 
+                  className="!focus-visible:ring-0 !focus-visible:ring-offset-0 !border-gray-300 focus:!border-primary"
+                />
+                <Textarea 
+                  placeholder="Tell us about your project..." 
+                  rows={5} 
+                  className="!focus-visible:ring-0 !focus-visible:ring-offset-0 !border-gray-300 focus:!border-primary resize-none"
+                />
+                <Button className="w-full bg-primary hover:bg-primary/90">
                   Send Message
                 </Button>
               </CardContent>

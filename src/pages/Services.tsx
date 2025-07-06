@@ -7,7 +7,7 @@ const ServicesPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-10">
         <Services />
       </main>
       <Footer />

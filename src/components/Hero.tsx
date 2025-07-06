@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg"  className=" border-white hover:bg-orange-800 ">
+              <Button size="lg"  className=" border-white bg-blue-700 hover:bg-orange-800 ">
                 Contact Us
               </Button>
             </Link>

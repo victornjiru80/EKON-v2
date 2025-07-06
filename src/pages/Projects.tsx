@@ -7,7 +7,7 @@ const ProjectsPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-10">
         <Projects />
       </main>
       <Footer />

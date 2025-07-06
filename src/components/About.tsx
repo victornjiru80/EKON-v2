@@ -31,7 +31,7 @@ const statCardVariant = {
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-gray-50">
+      <section id="about" className="py-20 bg-muted/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-muted-foreground text-gray-900 mb-4">About EKON Construction</h2>
@@ -79,7 +79,7 @@ const About: React.FC = () => {
                 >
                   <Card>
                     <CardContent className="p-6 text-center">
-                      <h4 className="text-3xl font-bold text-orange-600 mb-2">{stat.num}</h4>
+                      <h4 className="text-2xl font-medium text-orange-600 mb-2">{stat.num}</h4>
                       <p className="text-gray-600">{stat.label}</p>
                     </CardContent>
                   </Card>
