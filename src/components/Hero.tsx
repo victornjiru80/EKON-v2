@@ -8,17 +8,17 @@ const Hero: React.FC = () => {
   
   const slides = [
     {
-      image: '/bg1.png',
-      title: 'Building Excellence Since 2011',
+      image: '/projects/bg1.jpg',
+      title: 'Building Excellence Since 2019',
       subtitle: 'Professional Construction Services'
     },
     {
-      image: '/bg2.png',
+      image: '/projects/bg2.jpg',
       title: 'Quality Construction',
       subtitle: 'Trusted by Communities'
     },
     {
-      image: '/bg3.png',
+      image: '/bg2.png',
       title: 'Modern Infrastructure',
       subtitle: 'Building Tomorrow Today'
     }
@@ -47,14 +47,14 @@ const Hero: React.FC = () => {
             alt={slide.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50" />
+          <div className="absolute inset-0 bg-black bg-opacity-80" />
         </div>
       ))}
       
       <div className="absolute inset-0 flex items-center justify-center text-center text-white">
         
         <div className="max-w-4xl px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 min-h-[3.5rem]">
             {slides[currentSlide].title}
           </h1>
           <p className="text-xl md:text-2xl mb-8">
@@ -62,12 +62,12 @@ const Hero: React.FC = () => {
           </p>
           <div className="space-x-4">
             <Link to="/projects">
-              <Button size="lg" className="bg-orange-500 hover:bg-gray-800 text-white">
+              <Button size="lg" className="bg-orange-500 hover:bg-gray-800 text-white text-lg">
                 View Projects
               </Button>
             </Link>
             <Link to="/contact">
-              <Button size="lg"  className=" border-white bg-blue-700 hover:bg-orange-800 ">
+              <Button size="lg"  className=" border-white bg-blue-700 hover:bg-orange-800 text-lg">
                 Contact Us
               </Button>
             </Link>

@@ -12,7 +12,7 @@ interface SEOHeadProps {
 const SEOHead: React.FC<SEOHeadProps> = ({
   title,
   description,
-  keywords = 'construction, building, EKON, Kenya, commercial construction, residential construction',
+  keywords = 'construction, building, TEKON, Kenya, commercial construction, residential construction',
   image = '/EKON_builders (1).png',
   url = window.location.href,
   type = 'website'
@@ -38,7 +38,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
       
       {/* Additional SEO */}
       <meta name="robots" content="index, follow" />
-      <meta name="author" content="EKON Construction" />
+      <meta name="author" content="Tekon Build Solutions" />
       <link rel="canonical" href={url} />
     </Helmet>
   );

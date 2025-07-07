@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Award, Users, Clock, Heart, Zap } from 'lucide-react';
+import { Shield, Award, Users, Clock, Heart, Zap, Lightbulb } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const OurValues: React.FC = () => {
@@ -30,14 +30,14 @@ const OurValues: React.FC = () => {
       description: "We build lasting relationships with our clients through transparency, communication, and trust."
     },
     {
-      icon: <Zap className="w-8 h-8 text-primary" />,
+      icon: <Lightbulb className="w-8 h-8 text-primary" />,
       title: "Innovation",
       description: "We embrace modern construction techniques and sustainable practices for better outcomes."
     }
   ];
 
   return (
-    <section className="py-20 bg-muted">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -67,7 +67,7 @@ const OurValues: React.FC = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{value.title}</h3>
+                <h3 className="text-xl font-semibold text-muted-foreground mb-3">{value.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{value.description}</p>
               </div>
             </motion.div>
@@ -81,10 +81,10 @@ const OurValues: React.FC = () => {
           transition={{ delay: 0.5, duration: 0.7 }}
           className="mt-16 text-center"
         >
-          <div className="bg-primary/5 rounded-2xl p-8 border border-primary/10">
+          <div className="bg-white rounded-2xl p-8 border border-primary/10">
             <h3 className="text-2xl font-bold text-muted-foreground mb-4">Building with Purpose</h3>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              At EKON Construction, we don't just build structures – we build dreams, communities, and a better future for Kenya. 
+              At Tekon Builders, we don't just build structures – we build dreams, communities, and a better future for Kenya. 
               Our values are the foundation of every project we undertake.
             </p>
           </div>

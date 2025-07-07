@@ -44,32 +44,32 @@ const Services: React.FC = () => {
     {
       title: 'Commercial Construction',
       description: 'Office buildings, retail spaces, and commercial complexes built to the highest standards.',
-      icon: 'https://img.icons8.com/?size=100&id=YFY0zG9WOavq&format=png&color=000000'
+      icon: '/projects/commercial.jpg'
     },
     {
       title: 'Residential Construction',
       description: 'Custom homes, apartments, and residential developments designed for modern living.',
-      icon: 'https://img.icons8.com/?size=100&id=iJzm3AFQCS4W&format=png&color=000000'
+      icon: '/projects/residential.jpg'
     },
     {
-      title: 'Healthcare Facilities',
-      description: 'Hospitals, clinics, and medical centers with specialized construction requirements.',
-      icon: 'https://img.icons8.com/?size=100&id=rBh1fuOC6Bjx&format=png&color=000000'
+      title: 'Building Machinery & Tools',
+      description: 'We provide equipment such as Trappers, Concrete Mixers, and other construction tools.',
+      icon: '/projects/trappers.jpg'
     },
     {
-      title: 'Infrastructure Projects',
-      description: 'Roads, bridges, and public infrastructure that connects communities.',
-      icon: 'https://img.icons8.com/?size=100&id=DKG5EanykiIZ&format=png&color=000000'
+      title: 'Architectural Design Plans',
+      description: 'Architectural designs, Structural designs, and Interior design services for your project.',
+      icon: '/projects/plans.jpg'
     },
     {
       title: 'Renovation & Remodeling',
       description: 'Transform existing spaces with our expert renovation and remodeling services.',
-      icon: 'https://img.icons8.com/?size=100&id=O1cboYBdJsgF&format=png&color=000000'
+      icon: '/projects/renovation.jpg'
     },
     {
       title: 'Project Management',
       description: 'Complete project oversight from planning to completion with experienced management.',
-      icon: 'https://img.icons8.com/?size=100&id=67345&format=png&color=000000'
+      icon: '/projects/management.jpg'
     }
   ];
 
@@ -101,26 +101,22 @@ const Services: React.FC = () => {
               key={index}
               variants={cardVariant}
               whileHover={{
-                scale: 1.045,
+                scale: 1.045, 
                 boxShadow: "0 8px 32px 0 rgba(249,115,22,0.13)",
                 transition: { type: "spring", stiffness: 300, damping: 18 }
               }}
               whileTap={{ scale: 0.98 }}
-              className="rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300"
+              className="rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
             >
-              <CardHeader className="text-center">
-                <motion.div
-                  
-                  animate="animate"
-                  className="text-4xl mb-4 flex justify-center"
-                >
-                  <img src={service.icon} alt={service.title + " icon"} className="w-16 h-16" />
-                </motion.div>
-                <CardTitle className="text-xl">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
+              <img
+                src={service.icon}
+                alt={service.title + " icon"}
+                className="w-full h-48 object-cover rounded-t-lg"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-muted-foreground mb-2 text-center">{service.title}</h3>
                 <p className="text-gray-600 text-center">{service.description}</p>
-              </CardContent>
+              </div>
             </motion.div>
           ))}
         </motion.div>

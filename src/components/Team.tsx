@@ -31,7 +31,7 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 bg-muted">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl text-muted-foreground md:text-4xl font-bold text-gray-900 mb-4">
@@ -43,7 +43,7 @@ const Team: React.FC = () => {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {teamMembers.map((member, index) => (
-            <Card key={index} className="text-center  hover:shadow-lg  transition-shadow">
+            <Card key={index} className="text-center  hover:shadow-lg  transition-shadow bg-white">
               <CardContent className="p-6 ">
                 <div className="mb-4">
                   <img

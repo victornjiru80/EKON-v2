@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Hero from '@/components/Hero';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Stats from '@/components/Stats';
@@ -22,11 +22,27 @@ const sectionVariant = {
 };
 
 const Index: React.FC = () => {
+  const [isSticky, setIsSticky] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroBottom = heroRef.current.getBoundingClientRect().bottom;
+        setIsSticky(heroBottom <= 0);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen">
-      <main className="pt-16">
-        <Navbar />
-        <Hero />
+      <main className="pt-0">
+        <Navbar transparent={!isSticky} />
+        <div ref={heroRef}>
+          <Hero />
+        </div>
         <motion.section
           variants={sectionVariant}
           initial="hidden"

@@ -14,7 +14,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, image, im
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Card className="cursor-pointer hover:shadow-lg transition-shadow">
+        <Card className="cursor-pointer hover:shadow-lg bg-white transition-shadow">
           <CardContent className="p-0">
             <img
               src={image}

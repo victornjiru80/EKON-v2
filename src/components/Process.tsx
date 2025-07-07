@@ -16,7 +16,7 @@ const Process: React.FC = () => {
     {
       number: '03',
       title: 'Construction & Execution',
-      description: 'With experienced teams and quality materials, we bring your project to life with precision and attention to detail.'
+      description: 'With experienced teams and quality materials, we bring your project to life with precision.'
     },
     {
       number: '04',
@@ -26,7 +26,7 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-muted">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,7 +35,7 @@ const Process: React.FC = () => {
           transition={{ duration: 0.7 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Process</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-muted-foreground mb-4">Our Process</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We follow a proven four-step process to ensure your construction project is completed on time, within budget, and to the highest quality standards.
           </p>
@@ -55,7 +55,7 @@ const Process: React.FC = () => {
                 <div className="absolute -top-4 left-4 bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">
                   {step.number}
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-4 mt-4">{step.title}</h3>
+                <h3 className="text-xl font-semibold text-muted-foreground mb-4 mt-4">{step.title}</h3>
                 <p className="text-muted-foreground">{step.description}</p>
               </div>
             </motion.div>

@@ -18,9 +18,9 @@ const ServiceDetails: React.FC = () => {
     },
     {
       icon: <Factory className="h-12 w-12 text-blue-600" />,
-      title: "Industrial Projects",
-      description: "Specialized industrial construction for manufacturing and logistics.",
-      features: ["Manufacturing Plants", "Distribution Centers", "Processing Facilities", "Storage Solutions"]
+      title: "Building Machinery & Tools",
+      description: "We provide equipment such as Trappers, Concrete Mixers, and other construction tools.",
+      features: ["Trappers", "Concrete Mixers", "Other Construction Tools"]
     },
     {
       icon: <Wrench className="h-12 w-12 text-blue-600" />,

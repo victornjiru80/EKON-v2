@@ -5,6 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 @layer base {
   :root {
     --background: 220 14% 96%; /* light gray */
@@ -133,4 +135,8 @@
 
 a.active p{
   color: orange;
+}
+
+*{
+  font-family: 'Outfit', sans-serif;
 }

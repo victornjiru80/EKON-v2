@@ -5,33 +5,33 @@ import { motion } from 'framer-motion';
 const WhyChooseUs: React.FC = () => {
   const reasons = [
     {
-      icon: <CheckCircle className="h-8 w-8 text-primary" />,
+      icon: '/projects/quality.jpg',
       title: "Quality Assurance",
       description: "We ensure the highest quality standards in every project we undertake."
     },
     {
-      icon: <Award className="h-8 w-8 text-primary" />,
+      icon: '/projects/expert.jpg',
       title: "Expert Team",
       description: "Our certified professionals bring years of experience to your project."
     },
     {
-      icon: <Users className="h-8 w-8 text-primary" />,
+      icon: '/projects/customer.jpg',
       title: "Customer Focus",
       description: "We prioritize client satisfaction and maintain clear communication."
     },
     {
-      icon: <Clock className="h-8 w-8 text-primary" />,
+      icon: '/projects/delivery.jpg',
       title: "Timely Delivery",
       description: "We complete projects on time without compromising on quality."
     }
   ];
 
   return (
-    <section className="py-16 bg-muted">
+    <section className="pt-16 pb-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Why Choose EKON Construction?
+          <h2 className="text-3xl md:text-4xl font-bold text-muted-foreground mb-4">
+            Why Choose Tekon Builders?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We deliver exceptional construction services with unmatched quality and reliability.
@@ -44,15 +44,41 @@ const WhyChooseUs: React.FC = () => {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.7 }}
-              whileHover={{ y: -5 }}
-              className="text-center bg-white/80 backdrop-blur-sm rounded-lg p-6 hover:shadow-lg transition-all duration-300 border-0"
+              transition={{ delay: index * 0.15, duration: 0.7 }}
+              whileHover="hovered"
+              className="relative h-64 rounded-lg overflow-hidden shadow-lg group cursor-pointer"
             >
-              <div className="flex justify-center mb-4">
-                {reason.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-foreground">{reason.title}</h3>
-              <p className="text-muted-foreground">{reason.description}</p>
+              <motion.div
+                className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-500"
+                style={{ backgroundImage: `url(${reason.icon})` }}
+                variants={{
+                  hovered: { scale: 1.15 },
+                  initial: { scale: 1 }
+                }}
+                initial="initial"
+                animate="initial"
+              />
+              <motion.div
+                className="absolute inset-0 bg-black bg-opacity-70 group-hover:bg-opacity-0 transition-all duration-500"
+                variants={{
+                  hovered: { opacity: 0 },
+                  initial: { opacity: 1 }
+                }}
+                initial="initial"
+                animate="initial"
+              />
+              <motion.div
+                className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4"
+                variants={{
+                  hovered: { opacity: 0 },
+                  initial: { opacity: 1 }
+                }}
+                initial="initial"
+                animate="initial"
+              >
+                <h3 className="text-xl font-semibold mb-3">{reason.title}</h3>
+                <p className="text-base">{reason.description}</p>
+              </motion.div>
             </motion.div>
           ))}
         </div>

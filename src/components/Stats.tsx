@@ -20,7 +20,7 @@ const Stats: React.FC = () => {
     },
     {
       icon: <Calendar className="h-8 w-8 text-white" />,
-      number: "15+",
+      number: "6+",
       label: "Years Experience"
     }
   ];
