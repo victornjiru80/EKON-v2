@@ -34,14 +34,14 @@ const headingVariant = {
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: 'Niam Hospital',
+      title: 'Blissful Hospital',
       description: 'Modern healthcare facility with state-of-the-art equipment and patient-centered design.',
       image: 'https://d64gsuwffb70l.cloudfront.net/6851251359aa97b9f0f5fcb1_1750782234922_e00bfd61.png',
       images: [
         'https://d64gsuwffb70l.cloudfront.net/6851251359aa97b9f0f5fcb1_1750782234922_e00bfd61.png',
         'https://d64gsuwffb70l.cloudfront.net/6851251359aa97b9f0f5fcb1_1750782234922_e00bfd61.png'
       ],
-      fullDescription: 'The Niam Hospital project represents our commitment to healthcare infrastructure. This multi-story facility features advanced medical equipment, patient rooms, surgical suites, and administrative offices. Built with sustainable materials and energy-efficient systems.'
+      fullDescription: 'The Blissful Hospital project represents our commitment to healthcare infrastructure. This multi-story facility features advanced medical equipment, patient rooms, surgical suites, and administrative offices. Built with sustainable materials and energy-efficient systems.'
     },
     {
       title: 'Commercial Complex',

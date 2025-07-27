@@ -48,7 +48,7 @@ const About: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
           >
             <img
-              src="https://d64gsuwffb70l.cloudfront.net/6851251359aa97b9f0f5fcb1_1750782234922_e00bfd61.png"
+              src="/projects/expert.jpg"
               alt="Tekon Build Solutions"
               className="rounded-lg shadow-lg w-full"
             />
