@@ -37,7 +37,7 @@ const formVariant = {
 
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 to-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4 text-muted-foreground">Contact Us</h2>
@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
           >
-            <Card className='bg-white'>
+            <Card className='bg-white/40 backdrop-blur-xl border border-white/60 shadow-xl hover:shadow-2xl transition-shadow'>
               <CardHeader>
                 <CardTitle className='text-muted-foreground'>Send us a Message</CardTitle>
               </CardHeader>
@@ -62,29 +62,29 @@ const Contact: React.FC = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <Input 
                     placeholder="First Name" 
-                    className="!focus-visible:ring-0 bg-white !focus-visible:ring-offset-0 !border-gray-300 focus:!border-primary"
+                    className="!focus-visible:ring-0 bg-white/50 backdrop-blur-sm !focus-visible:ring-offset-0 !border-white/60 focus:!border-gray-800 placeholder:text-gray-600"
                   />
                   <Input 
                     placeholder="Last Name" 
-                    className="!focus-visible:ring-0 bg-white !focus-visible:ring-offset-0 !border-gray-300 focus:!border-primary"
+                    className="!focus-visible:ring-0 bg-white/50 backdrop-blur-sm !focus-visible:ring-offset-0 !border-white/60 focus:!border-gray-800 placeholder:text-gray-600"
                   />
                 </div>
                 <Input 
                   placeholder="Email Address" 
                   type="email" 
-                  className="!focus-visible:ring-0 bg-white !focus-visible:ring-offset-0 !border-gray-300 focus:!border-primary"
+                  className="!focus-visible:ring-0 bg-white/50 backdrop-blur-sm !focus-visible:ring-offset-0 !border-white/60 focus:!border-gray-800 placeholder:text-gray-600"
                 />
                 <Input 
                   placeholder="Phone Number" 
                   type="tel" 
-                  className="!focus-visible:ring-0 bg-white !focus-visible:ring-offset-0 !border-gray-300 focus:!border-primary"
+                  className="!focus-visible:ring-0 bg-white/50 backdrop-blur-sm !focus-visible:ring-offset-0 !border-white/60 focus:!border-gray-800 placeholder:text-gray-600"
                 />
                 <Textarea 
                   placeholder="Tell us about your project..." 
                   rows={5} 
-                  className="!focus-visible:ring-0 bg-white !focus-visible:ring-offset-0 !border-gray-300 focus:!border-primary resize-none"
+                  className="!focus-visible:ring-0 bg-white/50 backdrop-blur-sm !focus-visible:ring-offset-0 !border-white/60 focus:!border-gray-800 placeholder:text-gray-600 resize-none"
                 />
-                <Button className="w-full bg-primary hover:bg-primary/90">
+                <Button className="w-full bg-orange-400 hover:bg-orange-800 text-white/90">
                   Send Message
                 </Button>
               </CardContent>
@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
           </motion.div>
           
           {/* Animate the info cards from the right, staggered */}
-          <div className="space-y-8 bg-white">
+          <div className="space-y-8">
             {[
               {
                 icon: <MapPin className="mr-2" />,
@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
               >
-                <Card className='bg-white'>
+                <Card className='bg-white/40 backdrop-blur-xl border border-white/60 shadow-xl hover:shadow-2xl transition-shadow'>
                   <CardContent className="p-6">
                     <h3 className="text-xl text-muted-foreground font-bold mb-4 flex items-center">
                       {card.icon} {card.title}

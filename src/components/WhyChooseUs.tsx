@@ -1,6 +1,6 @@
 import React from 'react';
 import { CheckCircle, Award, Users, Clock } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const WhyChooseUs: React.FC = () => {
   const reasons = [
@@ -26,6 +26,23 @@ const WhyChooseUs: React.FC = () => {
     }
   ];
 
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  const handleSwipe = (offsetX: number) => {
+    const threshold = 100;
+    if (offsetX < -threshold) {
+      setCurrentIndex((prev) => (prev + 1) % reasons.length);
+    }
+    if (offsetX > threshold) {
+      setCurrentIndex((prev) => (prev - 1 + reasons.length) % reasons.length);
+    }
+  };
+
+  const getCardByOffset = (offset: number) => {
+    const idx = (currentIndex + offset + reasons.length) % reasons.length;
+    return { ...reasons[idx], idx };
+  };
+
   return (
     <section className="pt-16 pb-6 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +54,87 @@ const WhyChooseUs: React.FC = () => {
             We deliver exceptional construction services with unmatched quality and reliability.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Small screens: stacked, swipeable cards */}
+        <div className="block md:hidden">
+          <div className="relative h-80 max-w-sm mx-auto">
+            <AnimatePresence initial={false}>
+              {[0, 1, 2].map((offset) => {
+                const item = getCardByOffset(offset);
+                const isTop = offset === 0;
+                const zIndex = 30 - offset;
+                const scale = 1 - offset * 0.06;
+                const translateY = offset * 12;
+                return (
+                  <motion.div
+                    key={`${item.idx}-${offset}`}
+                    className="absolute inset-0 rounded-lg overflow-hidden shadow-xl cursor-grab active:cursor-grabbing"
+                    style={{ zIndex }}
+                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                    animate={{ opacity: 1, y: translateY, scale }}
+                    exit={{ opacity: 0, y: -40, scale: 0.95 }}
+                    transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+                    drag={isTop ? 'x' : false}
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.2}
+                    onDragEnd={(_, info) => isTop && handleSwipe(info.offset.x)}
+                    whileHover="hovered"
+                  >
+                    <motion.div
+                      className="absolute inset-0 w-full h-full bg-cover bg-center"
+                      style={{ backgroundImage: `url(${item.icon})` }}
+                      variants={{
+                        hovered: { scale: 1.12 },
+                        initial: { scale: 1 }
+                      }}
+                      initial="initial"
+                      animate="initial"
+                    />
+                    <motion.div
+                      className="absolute inset-0 bg-black bg-opacity-70"
+                      variants={{
+                        hovered: { opacity: 0.1 },
+                        initial: { opacity: 0.7 }
+                      }}
+                      initial="initial"
+                      animate="initial"
+                    />
+                    <motion.div
+                      className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-6"
+                      variants={{
+                        hovered: { opacity: 1 },
+                        initial: { opacity: 1 }
+                      }}
+                      initial="initial"
+                      animate="initial"
+                    >
+                      <h3 className="text-2xl font-semibold mb-3">{item.title}</h3>
+                      <p className="text-base opacity-90">{item.description}</p>
+                      {isTop && (
+                        <span className="mt-6 text-xs uppercase tracking-wide text-white/80 bg-white/10 px-3 py-1 rounded-full">
+                          Swipe left or right
+                        </span>
+                      )}
+                    </motion.div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
+          <div className="mt-6 flex items-center justify-center gap-2">
+            {reasons.map((_, i) => {
+              const active = i === currentIndex;
+              return (
+                <span
+                  key={i}
+                  className={`${active ? 'w-6 bg-gray-900' : 'w-2 bg-gray-300'} h-2 rounded-full transition-all`}
+                />
+              );
+            })}
+          </div>
+        </div>
+
+        {/* md+ screens: original grid */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
