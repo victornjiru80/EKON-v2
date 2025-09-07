@@ -7,25 +7,25 @@ const Team: React.FC = () => {
     {
       name: "Eric Kagiri",
       role: "CEO & Founder",
-      image: "/placeholder.svg",
+      image: "/avatar.png",
       description: "20+ years in construction industry with expertise in project management."
     },
     {
-      name: "Victor Mwangi",
+      name: "Victor Muriithi",
       role: "Lead Architect",
-      image: "/placeholder.svg",
+      image: "/avatar.png",
       description: "Award-winning architect specializing in sustainable building design."
     },
     {
       name: "Ephraim Muriuki",
       role: "Construction Manager",
-      image: "/placeholder.svg",
+      image: "/avatar.png",
       description: "Expert in large-scale construction projects and team coordination."
     },
     {
       name: "Murai Wambua",
       role: "Project Coordinator",
-      image: "/placeholder.svg",
+      image: "/avatar.png",
       description: "Ensures seamless project execution and client communication."
     }
   ];
