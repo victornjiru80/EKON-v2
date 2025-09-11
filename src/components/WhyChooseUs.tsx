@@ -44,7 +44,7 @@ const WhyChooseUs: React.FC = () => {
   };
 
   return (
-    <section className="pt-16 pb-6 bg-white">
+    <section className="pt-16 pb-6 bg-gradient-to-br from-slate-50 to-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-muted-foreground mb-4">

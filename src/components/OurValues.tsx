@@ -37,7 +37,7 @@ const OurValues: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-slate-50 to-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -81,7 +81,7 @@ const OurValues: React.FC = () => {
           transition={{ delay: 0.5, duration: 0.7 }}
           className="mt-16 text-center"
         >
-          <div className="bg-white rounded-2xl p-8 border border-primary/10">
+          <div className=" rounded-2xl p-8 border border-primary/10">
             <h3 className="text-2xl font-bold text-muted-foreground mb-4">Building with Purpose</h3>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               At Tekon Builders, we don't just build structures – we build dreams, communities, and a better future for Kenya. 
