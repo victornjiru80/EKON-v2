@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Play, Award, Users, Building } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,82 +11,281 @@ const Hero: React.FC = () => {
     {
       image: '/projects/bg1.jpg',
       title: 'Building Excellence Since 2019',
-      subtitle: 'Professional Construction Services'
+      subtitle: 'Professional Construction Services',
+      description: 'Transforming visions into reality with precision, quality, and innovation.',
+      stats: { projects: '150+', clients: '200+', years: '5+' }
     },
     {
       image: '/projects/bg2.jpg',
       title: 'Quality Construction',
-      subtitle: 'Trusted by Communities'
+      subtitle: 'Trusted by Communities',
+      description: 'Delivering sustainable and durable construction solutions that stand the test of time.',
+      stats: { projects: '150+', clients: '200+', years: '5+' }
     },
     {
       image: '/bg2.png',
       title: 'Modern Infrastructure',
-      subtitle: 'Building Tomorrow Today'
+      subtitle: 'Building Tomorrow Today',
+      description: 'Leading the future of construction with cutting-edge technology and innovative designs.',
+      stats: { projects: '150+', clients: '200+', years: '5+' }
     }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 6000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
   return (
-    <section className="relative h-screen sm:h-[100svh] overflow-hidden">
-      
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
+    <section className="relative h-screen overflow-hidden bg-gray-900">
+      {/* Static Background Fallback */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={slides[0].image}
+          alt="Background"
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+      </div>
+
+      {/* Background Images */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          className="absolute inset-0 z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
         >
-        
-          <img
-            src={slide.image}
-            alt={slide.title}
+          <motion.img
+            src={slides[currentSlide].image}
+            alt={slides[currentSlide].title}
             className="w-full h-full object-cover"
+            initial={{ scale: 1.05 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 8, ease: "easeOut" }}
           />
-          <div className="absolute inset-0 bg-black bg-opacity-80" />
-        </div>
-      ))}
-      
-      <div className="absolute inset-0 flex items-center justify-center text-center text-white">
-        
-        <div className="max-w-4xl px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 min-h-[3.5rem]">
-            {slides[currentSlide].title}
-          </h1>
-          <p className="text-xl md:text-2xl mb-8">
-            {slides[currentSlide].subtitle}
-          </p>
-          <div className="space-x-4">
-            <Link to="/projects">
-              <Button size="lg" className="bg-orange-500 hover:bg-gray-800 text-white text-lg">
-                View Projects
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button size="lg"  className=" border-white bg-blue-700 hover:bg-orange-800 text-lg">
-                Contact Us
-              </Button>
-            </Link>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Content */}
+      <div className="absolute inset-0 z-20 flex items-center pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <motion.div 
+              className="text-white space-y-8"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="space-y-4">
+                <motion.div
+                  className="inline-flex items-center px-4 py-2 bg-orange-500/20 backdrop-blur-sm rounded-full border border-orange-500/30"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <Award className="w-4 h-4 text-orange-400 mr-2" />
+                  <span className="text-sm font-medium text-orange-200">Award-Winning Construction</span>
+                </motion.div>
+
+                <AnimatePresence mode="wait">
+                  <motion.h1
+                    key={currentSlide}
+                    className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -30 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    {slides[currentSlide].title}
+                  </motion.h1>
+                </AnimatePresence>
+
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={`subtitle-${currentSlide}`}
+                    className="text-xl md:text-2xl text-orange-200 font-medium"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                  >
+                    {slides[currentSlide].subtitle}
+                  </motion.p>
+                </AnimatePresence>
+
+                <AnimatePresence mode="wait">
+                  <motion.p
+                    key={`desc-${currentSlide}`}
+                    className="text-lg text-gray-300 max-w-2xl"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
+                    {slides[currentSlide].description}
+                  </motion.p>
+                </AnimatePresence>
+              </div>
+
+              {/* Action Buttons */}
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <Link to="/projects">
+                  <Button 
+                    size="lg" 
+                    className="group bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                  >
+                    <span className="mr-2">View Our Projects</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    className="group border-2 border-white/30 bg-white/10 backdrop-blur-sm hover:bg-white hover:text-gray-900 text-white px-8 py-4 rounded-full transition-all duration-300"
+                  >
+                    <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-200" />
+                    <span>Get Started</span>
+                  </Button>
+                </Link>
+              </motion.div>
+
+              {/* Stats */}
+              <motion.div 
+                className="grid grid-cols-3 gap-8 pt-8 border-t border-white/20"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-2">
+                    <Building className="w-6 h-6 text-orange-400 mr-2" />
+                    <span className="text-2xl md:text-3xl font-bold text-orange-400">
+                      {slides[currentSlide].stats.projects}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-300">Projects Completed</p>
+                </div>
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-2">
+                    <Users className="w-6 h-6 text-orange-400 mr-2" />
+                    <span className="text-2xl md:text-3xl font-bold text-orange-400">
+                      {slides[currentSlide].stats.clients}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-300">Happy Clients</p>
+                </div>
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-2">
+                    <Award className="w-6 h-6 text-orange-400 mr-2" />
+                    <span className="text-2xl md:text-3xl font-bold text-orange-400">
+                      {slides[currentSlide].stats.years}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-300">Years Experience</p>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Content - Video/Image Placeholder */}
+            <motion.div 
+              className="hidden lg:block"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              <div className="relative">
+                <div className="aspect-video bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-2xl overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.div
+                      className="w-20 h-20 bg-orange-500/80 rounded-full flex items-center justify-center cursor-pointer hover:bg-orange-500 transition-colors duration-200"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Play className="w-8 h-8 text-white ml-1" />
+                    </motion.div>
+                  </div>
+                </div>
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-20 blur-xl"></div>
+                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full opacity-10 blur-2xl"></div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
-      
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {slides.map((_, index) => (
+
+      {/* Navigation Controls */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
+        <div className="flex items-center space-x-4">
           <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${
-              index === currentSlide ? 'bg-orange-600' : 'bg-white bg-opacity-50'
-            }`}
-          />
-        ))}
+            onClick={prevSlide}
+            className="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
+          >
+            <ArrowRight className="w-5 h-5 rotate-180" />
+          </button>
+          
+          <div className="flex space-x-2">
+            {slides.map((_, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentSlide 
+                    ? 'bg-orange-500 w-8' 
+                    : 'bg-white/30 w-2 hover:bg-white/50'
+                }`}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+              />
+            ))}
+          </div>
+          
+          <button
+            onClick={nextSlide}
+            className="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
+          >
+            <ArrowRight className="w-5 h-5" />
+          </button>
+        </div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div 
+        className="absolute bottom-8 right-8 text-white z-30"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+      >
+        <motion.div
+          className="flex flex-col items-center space-y-2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <span className="text-sm font-medium">Scroll</span>
+          <div className="w-px h-8 bg-gradient-to-b from-white to-transparent"></div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

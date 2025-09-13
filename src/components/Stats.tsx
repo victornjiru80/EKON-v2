@@ -9,32 +9,36 @@ const Stats: React.FC = () => {
 
   const stats = [
     {
-      icon: <Building className="h-10 w-10 text-orange-600" />,
-      number: 50,
+      icon: Building,
+      number: 150,
       suffix: "+",
       label: "Projects Completed",
-      color: "from-orange-400 to-orange-600"
+      description: "Successfully delivered across Kenya",
+      color: "from-orange-500 to-orange-600"
     },
     {
-      icon: <Users className="h-10 w-10 text-blue-600" />,
+      icon: Users,
       number: 200,
       suffix: "+",
       label: "Happy Clients",
-      color: "from-blue-400 to-blue-600"
+      description: "Satisfied customers nationwide",
+      color: "from-orange-400 to-orange-500"
     },
     {
-      icon: <Award className="h-10 w-10 text-purple-600" />,
-      number: 25,
+      icon: Award,
+      number: 15,
       suffix: "+",
       label: "Awards Won",
-      color: "from-purple-400 to-purple-600"
+      description: "Industry recognition & excellence",
+      color: "from-orange-600 to-red-500"
     },
     {
-      icon: <Calendar className="h-10 w-10 text-green-600" />,
-      number: 6,
+      icon: Calendar,
+      number: 5,
       suffix: "+",
       label: "Years Experience",
-      color: "from-green-400 to-green-600"
+      description: "Building excellence since 2019",
+      color: "from-orange-500 to-yellow-500"
     }
   ];
 
@@ -73,8 +77,8 @@ const Stats: React.FC = () => {
       style={{
         background: `
           radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.3) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-          radial-gradient(circle at 40% 40%, rgba(147, 51, 234, 0.2) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(249, 115, 22, 0.2) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(251, 146, 60, 0.2) 0%, transparent 50%),
           linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)
         `
       }}
@@ -184,9 +188,7 @@ const Stats: React.FC = () => {
                     className="flex justify-center mb-6"
                   >
                     <div className={`p-4 bg-gradient-to-br ${stat.color} rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300`}>
-                      <div className="text-white">
-                        {stat.icon}
-                      </div>
+                      <stat.icon className="h-10 w-10 text-white" />
                     </div>
                   </motion.div>
 
@@ -211,9 +213,20 @@ const Stats: React.FC = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 + 0.7 }}
-                    className="text-lg text-gray-200 font-medium"
+                    className="text-lg text-gray-200 font-medium mb-2"
                   >
                     {stat.label}
+                  </motion.div>
+
+                  {/* Description */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2 + 0.9 }}
+                    className="text-sm text-gray-400"
+                  >
+                    {stat.description}
                   </motion.div>
 
                   {/* Progress bar */}
