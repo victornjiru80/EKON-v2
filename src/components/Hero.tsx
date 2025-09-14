@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 5000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
@@ -99,8 +99,6 @@ const Hero: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  <Award className="w-4 h-4 text-orange-400 mr-2" />
-                  <span className="text-sm font-medium text-orange-200">Award-Winning Construction</span>
                 </motion.div>
 
                 <AnimatePresence mode="wait">
@@ -215,77 +213,28 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="relative">
-                <div className="aspect-video bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-2xl overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div
-                      className="w-20 h-20 bg-orange-500/80 rounded-full flex items-center justify-center cursor-pointer hover:bg-orange-500 transition-colors duration-200"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Play className="w-8 h-8 text-white ml-1" />
-                    </motion.div>
+                 <div className="relative">
+                  <div className="aspect-video bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-2xl overflow-hidden">
+                    <img
+                      src="/projects/expert.jpg"
+                      alt="image"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+
+                     {/* Dark overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/20 pointer-events-none" />
                   </div>
+                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-20 blur-xl"></div>
+                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full opacity-10 blur-2xl"></div>
                 </div>
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-20 blur-xl"></div>
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-gradient-to-br from-orange-500 to-orange-700 rounded-full opacity-10 blur-2xl"></div>
-              </div>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Navigation Controls */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
-        <div className="flex items-center space-x-4">
-          <button
-            onClick={prevSlide}
-            className="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
-          >
-            <ArrowRight className="w-5 h-5 rotate-180" />
-          </button>
-          
-          <div className="flex space-x-2">
-            {slides.map((_, index) => (
-              <motion.button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentSlide 
-                    ? 'bg-orange-500 w-8' 
-                    : 'bg-white/30 w-2 hover:bg-white/50'
-                }`}
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
-              />
-            ))}
-          </div>
-          
-          <button
-            onClick={nextSlide}
-            className="w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all duration-200"
-          >
-            <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
-      </div>
+     
 
-      {/* Scroll Indicator */}
-      <motion.div 
-        className="absolute bottom-8 right-8 text-white z-30"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-      >
-        <motion.div
-          className="flex flex-col items-center space-y-2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <span className="text-sm font-medium">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-white to-transparent"></div>
-        </motion.div>
-      </motion.div>
+     
     </section>
   );
 };

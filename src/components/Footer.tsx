@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
               <Building2 className="w-9 h-9 text-white" />
             </div>
             <div>
-              <h3 className="text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">EKON</h3>
+              <h3 className="text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">TEKON</h3>
               <p className="text-orange-400 font-semibold text-lg">Build Solutions</p>
             </div>
           </div>
@@ -143,7 +143,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-slate-400 text-sm">Phone</p>
-                  <p className="text-white font-medium">+254 XXX XXX XXX</p>
+                  <p className="text-white font-medium">+254  798 560 723</p>
                 </div>
               </motion.div>
               
@@ -156,7 +156,7 @@ const Footer: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-slate-400 text-sm">Email</p>
-                  <p className="text-white font-medium">info@ekonbuilders.com</p>
+                  <p className="text-white font-medium">kagznjoro@gmail.com</p>
                 </div>
               </motion.div>
             </div>
@@ -255,37 +255,13 @@ const Footer: React.FC = () => {
             {/* Copyright & Additional Info */}
             <div className="text-center md:text-right">
               <p className="text-slate-400 text-sm mb-2">
-                © {new Date().getFullYear()} EKON Build Solutions. All rights reserved.
+                © {new Date().getFullYear()} TEKON Build Solutions. All rights reserved.
               </p>
               <p className="text-slate-500 text-xs">
                 Transforming Kenya through quality construction since 2019
               </p>
             </div>
           </div>
-
-          {/* Bottom CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="mt-12 text-center"
-          >
-            <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 to-transparent"></div>
-              <div className="relative z-10">
-                <h4 className="text-2xl font-bold text-white mb-2">Ready to Build Your Dream?</h4>
-                <p className="text-orange-100 mb-4">Let's discuss your next construction project today</p>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-orange-600 font-semibold px-8 py-3 rounded-xl hover:bg-orange-50 transition-colors duration-300 shadow-lg"
-                >
-                  Get Started Today
-                </motion.button>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </footer>

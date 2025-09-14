@@ -114,20 +114,7 @@ const About: React.FC = () => {
                 with modern technology to create structures that not only meet but exceed our clients' expectations.
               </p>
               
-              {/* Key Points */}
-              <div className="space-y-4">
-                {[
-                  'ISO certified construction processes',
-                  'Sustainable building practices',
-                  'Expert project management',
-                  'Quality materials and workmanship'
-                ].map((point, index) => (
-                  <div key={index} className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-orange-500 mr-3 flex-shrink-0" />
-                    <span className="text-slate-600">{point}</span>
-                  </div>
-                ))}
-              </div>
+             
             </div>
           </motion.div>
         </div>

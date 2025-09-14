@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MessageCircle, Drafting, Hammer, CheckCircle, ArrowRight, Clock, Users, Award } from 'lucide-react';
+import { MessageCircle, PencilRuler, Hammer, CheckCircle, ArrowRight, Clock, Users, Award } from 'lucide-react';
 
 const Process: React.FC = () => {
   const steps = [
@@ -14,7 +14,7 @@ const Process: React.FC = () => {
     },
     {
       number: '02',
-      icon: Drafting,
+      icon: PencilRuler,
       title: 'Design & Engineering',
       description: 'Our architects and engineers develop comprehensive designs that meet all safety standards and your specifications.',
       color: 'from-orange-500 to-yellow-500',

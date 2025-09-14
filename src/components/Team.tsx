@@ -148,41 +148,7 @@ const Team: React.FC = () => {
               </Card>
             </motion.div>
           ))}
-        </div>
-
-        {/* Team Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
-        >
-          {[
-            { number: "55+", label: "Combined Years", icon: Award },
-            { number: "200+", label: "Projects Delivered", icon: Users },
-            { number: "100%", label: "Client Satisfaction", icon: Award },
-            { number: "24/7", label: "Team Support", icon: Users }
-          ].map((stat, index) => {
-            const IconComponent = stat.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <IconComponent className="w-8 h-8 text-orange-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-orange-600 mb-1">{stat.number}</h3>
-                <p className="text-slate-600 text-sm">{stat.label}</p>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+        </div>      
       </div>
     </section>
   );
