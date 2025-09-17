@@ -73,7 +73,7 @@ const Stats: React.FC = () => {
   return (
     <section 
       ref={ref}
-      className="relative py-20 overflow-hidden"
+      className="relative py-12 sm:py-16 md:py-20 overflow-hidden"
       style={{
         background: `
           radial-gradient(circle at 20% 80%, rgba(249, 115, 22, 0.3) 0%, transparent 50%),
@@ -131,17 +131,17 @@ const Stats: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
             Our <span className="bg-gradient-to-r from-orange-400 to-blue-400 bg-clip-text text-transparent">Achievements</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
             Numbers that speak volumes about our commitment to excellence and client satisfaction
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {stats.map((stat, index) => {
             const count = useCountUp(stat.number);
             
@@ -163,7 +163,7 @@ const Stats: React.FC = () => {
                 }}
                 className="relative"
               >
-                <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-8 text-center shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 group">
+                <div className="relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-4 sm:p-6 md:p-8 text-center shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 group">
                   {/* Gradient overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-300`} />
                   
@@ -185,10 +185,10 @@ const Stats: React.FC = () => {
                       type: "spring",
                       stiffness: 200
                     }}
-                    className="flex justify-center mb-6"
+                    className="flex justify-center mb-3 sm:mb-4 md:mb-6"
                   >
-                    <div className={`p-4 bg-gradient-to-br ${stat.color} rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300`}>
-                      <stat.icon className="h-10 w-10 text-white" />
+                    <div className={`p-3 sm:p-4 bg-gradient-to-br ${stat.color} rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300`}>
+                      <stat.icon className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
                     </div>
                   </motion.div>
 
@@ -202,7 +202,7 @@ const Stats: React.FC = () => {
                       type: "spring",
                       stiffness: 200
                     }}
-                    className="text-4xl md:text-5xl font-bold text-white mb-3 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent"
+                    className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 sm:mb-3 bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent"
                   >
                     {count}{stat.suffix}
                   </motion.div>
@@ -213,7 +213,7 @@ const Stats: React.FC = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 + 0.7 }}
-                    className="text-lg text-gray-200 font-medium mb-2"
+                    className="text-base sm:text-lg text-gray-200 font-medium mb-1 sm:mb-2"
                   >
                     {stat.label}
                   </motion.div>
@@ -224,7 +224,7 @@ const Stats: React.FC = () => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.2 + 0.9 }}
-                    className="text-sm text-gray-400"
+                    className="text-xs sm:text-sm text-gray-400"
                   >
                     {stat.description}
                   </motion.div>

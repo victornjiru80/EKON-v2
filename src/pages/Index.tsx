@@ -61,12 +61,14 @@ const Index: React.FC = () => {
         >
           <Stats />
         </motion.section>
+        <div className="h-8 sm:h-12 md:h-16"></div>
         <motion.section
           variants={sectionVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.05, margin: "-200px 0px -200px 0px" }}
           custom={2}
+          className="relative z-10"
         >
           <Process />
         </motion.section>

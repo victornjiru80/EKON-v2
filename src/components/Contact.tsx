@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 to-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-muted-foreground">Contact Us</h2>
+        <h2 className="text-5xl font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400 bg-clip-text text-transparent mb-6">Contact Us</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Ready to start your construction project? Get in touch with our team today.
           </p>
