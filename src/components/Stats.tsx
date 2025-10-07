@@ -34,10 +34,10 @@ const Stats: React.FC = () => {
     },
     {
       icon: Calendar,
-      number: 5,
+      number: 6,
       suffix: "+",
       label: "Years Experience",
-      description: "Building excellence since 2019",
+      description: "Building excellence since 2018",
       color: "from-orange-500 to-yellow-500"
     }
   ];

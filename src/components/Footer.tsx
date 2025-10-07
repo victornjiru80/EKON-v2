@@ -78,12 +78,12 @@ const Footer: React.FC = () => {
             </div>
             <div>
               <h3 className="text-4xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">TEKON</h3>
-              <p className="text-orange-400 font-semibold text-lg">Build Solutions</p>
+              <p className="text-orange-400 font-semibold text-lg">Build Solutions Limited</p>
             </div>
           </div>
           
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-8">
-            Building excellence since 2019. We specialize in commercial, residential, and infrastructure 
+            Building excellence since 2018. We specialize in commercial, residential, and infrastructure 
             projects that transform communities across Kenya with innovation and quality.
           </p>
 
@@ -255,10 +255,10 @@ const Footer: React.FC = () => {
             {/* Copyright & Additional Info */}
             <div className="text-center md:text-right">
               <p className="text-slate-400 text-sm mb-2">
-                © {new Date().getFullYear()} TEKON Build Solutions. All rights reserved.
+                © {new Date().getFullYear()} TEKON Build Solutions Limited. All rights reserved.
               </p>
               <p className="text-slate-500 text-xs">
-                Transforming Kenya through quality construction since 2019
+                Transforming Kenya through quality construction since 2018
               </p>
             </div>
           </div>

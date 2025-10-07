@@ -143,7 +143,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       </DialogTrigger>
       
       {/* Enhanced Modal */}
-      <DialogContent className="max-w-6xl max-h-[95vh] lg:max-h-[90vh] overflow-y-auto bg-white rounded-2xl border-2 border-orange-100 mt-20 lg:mt-24 xl:mt-28">
+      <DialogContent className="max-w-6xl max-h-[95vh] lg:max-h-[90vh] overflow-y-auto bg-white rounded-2xl border-2 border-orange-100 mt-20 lg:mt-24 xl:mt-28" onOpenAutoFocus={(e) => e.preventDefault()}>
         <DialogHeader className="border-b border-orange-100 pb-6">
           <div className="flex items-start justify-between">
             <div>

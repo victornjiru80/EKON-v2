@@ -56,7 +56,7 @@ const Navbar: React.FC<{ transparent?: boolean }> = ({ transparent = false }) =>
                   <p className={`text-sm font-medium ${
                     transparent && !scrolled ? 'text-orange-200' : 'text-orange-600'
                   }`}>
-                    Build Solutions
+                    Build Solutions Limited
                   </p>
                 </div>
               </div>

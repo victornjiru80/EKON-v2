@@ -56,7 +56,7 @@ const About: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl font-bold bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400 bg-clip-text text-transparent mb-6">
-            About EKON Build Solutions
+            About TEKON Build Solutions Limited
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             Building Kenya's future with excellence, integrity, and innovation since our founding. 
@@ -75,7 +75,7 @@ const About: React.FC = () => {
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
               <img
                 src="/projects/IMG-20250707-WA0002.jpg"
-                alt="EKON Build Solutions"
+                alt="TEKON Build Solutions"
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-orange-600/20 to-transparent"></div>
@@ -84,7 +84,7 @@ const About: React.FC = () => {
               <div className="absolute top-6 left-6">
                 <Badge className="bg-orange-500 text-white shadow-lg backdrop-blur-sm">
                   <Building2 className="w-4 h-4 mr-2" />
-                  Since 2019
+                  Since 2018
                 </Badge>
               </div>
             </div>
@@ -106,7 +106,7 @@ const About: React.FC = () => {
               </h3>
               <p className="text-slate-600 leading-relaxed mb-6 text-lg">
                 EKON Build Solutions has been at the forefront of Kenya's construction industry, delivering exceptional
-                projects that stand the test of time. Founded in 2019, we have been a trusted partner for clients across
+                projects that stand the test of time. Founded in 2018, we have been a trusted partner for clients across
                 the region.
               </p>
               <p className="text-slate-600 leading-relaxed mb-8">

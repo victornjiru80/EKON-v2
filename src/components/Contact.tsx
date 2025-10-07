@@ -100,7 +100,7 @@ const Contact: React.FC = () => {
                 content: (
                   <p className="text-gray-600">
                     Nairobi, Kenya<br />
-                    Building Kenya Since 2019
+                    Building Kenya Since 2018
                   </p>
                 ),
               },
@@ -111,7 +111,7 @@ const Contact: React.FC = () => {
                   <div className="space-y-2 text-gray-600">
                     <p>Phone: +254 798 560 723</p>
                     <p>Email: kagznjoro@gmail.com</p>
-                    <p>Office Hours: Mon-Fri 8:00 AM - 6:00 PM</p>
+                    <p>Office Hours: Mon-Fri 8:00 AM - 5:00 PM</p>
                   </div>
                 ),
               },

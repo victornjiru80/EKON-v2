@@ -13,21 +13,21 @@ const Hero: React.FC = () => {
       title: 'Building Excellence Since 2019',
       subtitle: 'Professional Construction Services',
       description: 'Transforming visions into reality with precision, quality, and innovation.',
-      stats: { projects: '150+', clients: '200+', years: '5+' }
+      stats: { projects: '150+', clients: '200+', years: '6+' }
     },
     {
       image: '/projects/bg2.jpg',
       title: 'Quality Construction',
       subtitle: 'Trusted by Communities',
       description: 'Delivering sustainable and durable construction solutions that stand the test of time.',
-      stats: { projects: '150+', clients: '200+', years: '5+' }
+      stats: { projects: '150+', clients: '200+', years: '6+' }
     },
     {
       image: '/bg2.png',
       title: 'Modern Infrastructure',
       subtitle: 'Building Tomorrow Today',
       description: 'Leading the future of construction with cutting-edge technology and innovative designs.',
-      stats: { projects: '150+', clients: '200+', years: '5+' }
+      stats: { projects: '150+', clients: '200+', years: '6+' }
     }
   ];
 
