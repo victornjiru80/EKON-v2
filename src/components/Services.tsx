@@ -86,7 +86,7 @@ const Services: React.FC = () => {
       fullDescription: 'Our residential construction services focus on creating beautiful, functional homes and residential communities that enhance modern living. From custom single-family homes to multi-unit apartment complexes, we deliver high-quality residential projects that combine comfort, style, and sustainability. Our team works closely with homeowners and developers to bring their vision to life.',
       benefits: ['Customizable designs', 'Energy-efficient homes', 'Quality craftsmanship', 'Modern amenities', 'Sustainable building practices', 'Timely completion'],
       process: ['Client consultation and vision planning', 'Design and architectural planning', 'Permit and regulatory approvals', 'Construction phase with regular updates', 'Quality inspections and final walkthrough', 'Move-in ready handover'],
-      pricing: 'Starting from $150,000 for custom homes - contact for detailed quotes'
+      pricing: 'Starting from kes 1,150,000 for custom homes - contact for detailed quotes'
     },
     {
       title: 'Building Machinery & Tools',
@@ -112,7 +112,7 @@ const Services: React.FC = () => {
       fullDescription: 'Our architectural design services cover the complete design process from concept to construction documents. We create detailed architectural plans, structural designs, and interior layouts that meet building codes and client requirements. Using advanced 3D modeling software, we provide realistic visualizations and ensure seamless coordination between design and construction.',
       benefits: ['3D visualization and modeling', 'Code-compliant designs', 'Permit assistance', 'Interior design coordination', 'Construction document sets', 'Design-build coordination'],
       process: ['Initial design consultation', 'Site analysis and programming', 'Conceptual design development', 'Detailed design and documentation', 'Permit application assistance', 'Construction administration support'],
-      pricing: 'Starting from $2,500 for basic plans - contact for detailed quotes'
+      pricing: 'Starting from kes 3,500 for basic plans - contact for detailed quotes'
     },
     {
       title: 'Renovation & Remodeling',
@@ -125,7 +125,7 @@ const Services: React.FC = () => {
       fullDescription: 'Our renovation and remodeling services transform existing spaces into modern, functional environments. Whether you need a complete kitchen renovation, bathroom upgrade, or office modernization, our experienced team delivers high-quality results that exceed expectations. We work efficiently to minimize disruption while maintaining the highest standards of craftsmanship.',
       benefits: ['Minimized disruption', 'Quality craftsmanship', 'Modern design solutions', 'Cost-effective upgrades', 'Energy-efficient improvements', 'Warranty on workmanship'],
       process: ['Initial assessment and planning', 'Design development and approval', 'Permits and preparations', 'Construction and renovation work', 'Quality inspections', 'Final cleanup and handover'],
-      pricing: 'Starting from $10,000 for basic renovations - contact for detailed quotes'
+      pricing: 'Starting from kes 10,000 for basic renovations - contact for detailed quotes'
     },
     {
       title: 'Project Management',
