@@ -13,7 +13,9 @@ import NotFound from "./pages/NotFound";
 import PageTitle from "./components/PageTitle";
 import ScrollToTop from "./components/ScrollToTop";
 
+
 const queryClient = new QueryClient();
+
 
 const App = () => (
   <HelmetProvider>
